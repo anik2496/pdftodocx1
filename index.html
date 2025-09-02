@@ -1,23 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>PDF ⇄ DOCX Converter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 5% auto;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .note {
+            margin-top: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Convert PDF to DOCX or DOCX to PDF</h1>
+
+<div class="container">
+    <h1>File Converter</h1>
 
     <form action="/convert" method="POST" enctype="multipart/form-data">
-        <label for="file">Select a file (.pdf or .docx):</label><br>
-        <input type="file" name="file" required><br><br>
+        <label for="file">Select a PDF or DOCX file:</label>
+        <input type="file" name="file" accept=".pdf,.docx" required>
 
-        <label for="convert_type">Choose conversion type:</label><br>
+        <label for="convert_type">Conversion type:</label>
         <select name="convert_type" required>
-            <option value="pdf_to_docx">PDF to DOCX</option>
-            <option value="docx_to_pdf">DOCX to PDF</option>
-        </select><br><br>
+            <option value="pdf_to_docx">PDF → DOCX</option>
+            <option value="docx_to_pdf">DOCX → PDF</option>
+        </select>
 
-        <button type="submit">Convert</button>
+        <button type="submit">Convert Now</button>
     </form>
+
+    <div class="note">
+        Only .pdf and .docx files are supported.
+    </div>
+</div>
+
 </body>
 </html>
+
+
 
