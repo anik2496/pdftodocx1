@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF ⇄ DOCX Converter</title>
+</head>
+<body>
+    <h1>Convert PDF to DOCX or DOCX to PDF</h1>
+
+    <form action="/convert" method="POST" enctype="multipart/form-data">
+        <label for="file">Select a file (.pdf or .docx):</label><br>
+        <input type="file" name="file" required><br><br>
+
+        <label for="convert_type">Choose conversion type:</label><br>
+        <select name="convert_type" required>
+            <option value="pdf_to_docx">PDF to DOCX</option>
+            <option value="docx_to_pdf">DOCX to PDF</option>
+        </select><br><br>
+
+        <button type="submit">Convert</button>
+    </form>
+</body>
+</html>
+
